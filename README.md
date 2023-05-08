@@ -4,13 +4,13 @@ backend technical test of Zara e-commerce
 
 <img width="380" alt="image" src="https://user-images.githubusercontent.com/116891108/236870073-c1bec28c-7f65-4742-a61a-4d93b31d99c1.png">
 
-#DATABASE MYSQL 
+# DATABASE MYSQL 
 
 <img width="592" alt="image" src="https://user-images.githubusercontent.com/116891108/236872762-0b8daccc-190d-450d-bc23-ff1a23b819d0.png">
 
 
 
-#RESULT
+# RESULT
 
 POSTMAN
 
