@@ -1,6 +1,7 @@
 package test.backendtechnical.payloads;
 
-import java.sql.Date;
+
+import java.time.LocalDateTime;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,8 +18,8 @@ public class PriceSale {
     private Long price;
     private Long brand;
     private Long product;
-    private Date startDate;
-    private Date endDate;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
     private Float pvp;
     private String currency;
 

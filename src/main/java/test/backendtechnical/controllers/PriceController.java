@@ -1,6 +1,6 @@
 package test.backendtechnical.controllers;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +19,7 @@ public class PriceController {
     private final PriceService priceService;
 
     @GetMapping("/{idBrand}/{idProduct}/{entryDate}")
-    public PriceSale getfindById(@PathVariable Long idBrand, @PathVariable Long idProduct, @PathVariable Date entryDate){
+    public PriceSale getfindById(@PathVariable Long idBrand, @PathVariable Long idProduct, @PathVariable  LocalDateTime entryDate){
         return priceService.findById(idBrand, idProduct, entryDate);
     }
 }

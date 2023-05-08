@@ -1,6 +1,7 @@
 package test.backendtechnical.services;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -30,7 +31,7 @@ public class PriceService {
     }
 
     @Transactional
-    public PriceSale findById(Long idBrand,Long idProduct, Date entryDate) {
+    public PriceSale findById(Long idBrand,Long idProduct, LocalDateTime entryDate) {
         List<Price> allPrices = priceRepository.findAll();
         Product dbProduct = productRepository.findById(idProduct).orElseThrow();
         Brand dbBrand = brandRepository.findById(idBrand).orElseThrow();
@@ -40,10 +41,10 @@ public class PriceService {
         return new PriceSale(dbPrice.getId(), dbBrand.getId(), dbProduct.getId(),
          dbPrice.getStartDate(), dbPrice.getEndDate(), dbPrice.getPvp(), dbPrice.getCurrency());
     }
-    private Price findPrice(List<Price> allPrices, Date dateToCompare){
+    private Price findPrice(List<Price> allPrices, LocalDateTime entryDate){
         Price priceToReturn = new Price();
         for (Price price : allPrices) {
-            if(dateToCompare.after(price.getStartDate())  && dateToCompare.before(price.getEndDate())) priceToReturn = price;
+            if(entryDate.isAfter(price.getStartDate())  && entryDate.isBefore(price.getEndDate())) priceToReturn = price;
         }
         return priceToReturn;
     }
