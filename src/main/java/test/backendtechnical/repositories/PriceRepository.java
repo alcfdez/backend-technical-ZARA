@@ -1,18 +1,11 @@
 package test.backendtechnical.repositories;
 
-import java.util.List;
+import java.sql.Date;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import test.backendtechnical.models.Price;
 
-public class PriceRepository{
-
-    public List<Price> findAll() {
-        return findAll();
-    }
-
-    public Price findById(Long id) {
-        return findById(id);
-    }
+public interface PriceRepository extends JpaRepository<Price, Long>{
 
 }
